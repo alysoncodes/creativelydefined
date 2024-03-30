@@ -1,0 +1,283 @@
+/*------------------------------------
+ *   VARIABLES
+ *------------------------------------*/
+
+
+/**GLOBAL COLORS**/
+
+
+
+/**BREAKPOINTS**/
+
+@maxBP: 1649px;
+@deskBP: 768px;
+@mBP: 767px;
+
+
+/**OTHER VARIABLES**/
+
+@mobile:~"only screen and (max-width: 767px)";
+@desktop:~"only screen and (min-width: 768px)";
+@tablet: ~"only screen and (max-width: 1024px) and (min-width:768px)";
+@desktopXL: ~"only screen and (min-width: 1649px)"; 
+
+
+/*------------------------------------
+ *   MIXINS
+ *------------------------------------*/
+
+.headfont {
+
+}
+
+.buttonfont {
+    
+}
+
+/*------------------------------------
+ *   CUSTOM FONTS
+ *------------------------------------*/
+//italic font
+@font-face {
+  font-family: 'items';
+  src: url('https://static1.squarespace.com/static/65f09b8f6978147b7a8534fc/t/6607520e448b9a73c37f89ef/1711755791000/items-condensedregularitalic-webfont.woff') format('woff'), url('https://static1.squarespace.com/static/65f09b8f6978147b7a8534fc/t/6607520ef1e135566801613f/1711755790947/items-condensedregularitalic-webfont.woff2') format('woff2');
+}
+//paragraph font
+@font-face {
+  font-family: 'neue';
+  src:  url('https://static1.squarespace.com/static/65f09b8f6978147b7a8534fc/t/6607520e7785d809a3b0b9a7/1711755790925/neueswiss-medium-webfont.woff2') format('woff2'),
+ url('https://static1.squarespace.com/static/65f09b8f6978147b7a8534fc/t/6607520ef809723ab5f46f02/1711755790993/neueswiss-medium-webfont.woff') format('woff');
+}
+//header
+@font-face {
+  font-family: 'poynter';
+  src:  url('https://static1.squarespace.com/static/65f09b8f6978147b7a8534fc/t/6607520ebe79df1ffd6e98e4/1711755790849/poynteroldstyledisplay-narroman-webfont.woff2') format('woff2'),
+    url('https://static1.squarespace.com/static/65f09b8f6978147b7a8534fc/t/6607520ee9e6c8798f9ead91/1711755790925/poynteroldstyledisplay-narroman-webfont.woff') format('woff');
+}
+//button font
+@font-face {
+  font-family: 'MyWebFont';
+  src:  url('myfont.woff2') format('woff2'),
+        url('myfont.woff') format('woff');
+}
+
+/*------------------------------------
+ *   font assignments
+ *------------------------------------*/
+
+
+
+
+
+//unhide if I want to globally remove margins
+/*
+h1,h2,h3 {
+ margin:0em !important;
+}
+*/
+
+//fluid sizes
+
+
+
+/*------------------------------------
+ *   GLOBAL STYLES
+ *------------------------------------*/
+.full-width {
+.fluid-engine {
+  --sqs-site-max-width:100vw;
+
+  --sqs-site-gutter:0vw;
+
+}
+}
+
+html {
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+
+
+.page-section:not(.user-items-list-section):not(.content-collection)>.content-wrapper {
+    box-sizing: border-box !important;
+    position: static !important
+}
+body:not(.sqs-edit-mode) {
+.sqs-row {
+ position:static !important
+}
+}
+
+a {
+  background-size:0px !important;
+  text-decoration:none !important;
+}
+
+/** Fluid Video Block- video fit into grid**/
+
+
+.video-block {
+  .sqs-native-video .native-video-player {
+    padding-top: 0 !important;
+  }
+
+  .video-player .plyr__poster {
+    object-fit:cover !important;
+    background-size:cover !important;
+  }
+  
+  .video-player .plyr video {
+  object-fit: cover !important;
+}
+  .embed-block-wrapper {
+    height: 100% !important;
+  }
+  .intrinsic {
+    height: 100% !important;
+  }
+
+  .sqs-block-content {
+    height: 100% !important;
+  }
+
+  .sqs-native-video {
+    height: 100% !important;
+  }
+  
+  
+}
+
+.is-being-dragged {
+    .sqs-block-video{
+      display:none;
+    }
+  }
+//end video block code
+
+//accordion styling
+
+.accordion-item__description{
+  margin-left: 0!important;
+}
+
+/*------------------------------------
+ *   Custom Classes / repeated code
+ *------------------------------------*/
+
+
+//sticky sections
+
+body:not(.sqs-edit-mode-active) { .sticky { 
+  position:sticky; 
+  top:0; 
+  } 
+  #sections.sticky .page-section { 
+    transform: translate3d(0,0,0) !important;
+  }
+}
+
+//target image name 
+.fe-block:has(img[src*='floating']) .fluid-image-container {
+
+
+}
+
+
+
+//section themes
+
+/*------------------------------------
+ *  DARK 1
+ *------------------------------------*/
+
+
+/*------------------------------------
+ *  HEADER
+ *------------------------------------*/
+//force mobile menu
+.header-display-desktop .header-burger {
+display:flex !important;
+order:2;
+}
+.header--menu-open {
+  .header-menu {
+     opacity:1;
+    visibility:visible;   
+  }
+  .header-menu-bg {
+    background-color:#DDD1C3;
+  }
+}
+@media screen and (min-width:767px) {
+  .header-menu {
+    height:50vh;
+  }
+
+  .header-menu-nav-item a {
+    font-size:2vw !important; /**Change Font Size**/
+  }
+
+  .header-menu-nav-folder-content {
+    flex-direction:row;
+    align-items:center;
+  }
+  
+  .header-nav-wrapper {
+    display:none;
+  }
+}
+//end forced mobile
+
+/*------------------------------------
+ *  FOOTER
+ *------------------------------------*/
+
+
+
+
+////FIX IG ISSUE	
+#block-yui_3_17_2_1_1636585898984_19999{img.loaded{
+top: 0!important;
+}}
+.sqs-gallery-design-strip-slide img{
+object-fit: cover;
+}
+
+
+//page specific
+
+/*------------------------------------
+ *  HOME
+ *------------------------------------*/
+
+
+/*------------------------------------
+ *  Contact
+ *------------------------------------*/
+
+/*------------------------------------
+ *  KEEP AT THE BOTTOM
+ *------------------------------------*/
+
+//To disable sticky on edit mode, add to the bottom of css panel:
+
+body.sqs-edit-mode-active {	
+#sections .page-section {	
+position:relative !important;	
+}	
+}
+
+//hiding markdown on load
+
+.markdown-block p {
+animation:fadeEnter 2s forwards;
+}
+@keyframes fadeEnter {
+0% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
